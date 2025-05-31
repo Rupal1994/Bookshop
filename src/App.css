@@ -1,0 +1,11 @@
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.logo-text {
+  font-family: 'Tiro Devanagari Sanskrit', serif;
+  font-size: 28px;
+  font-weight: bold;
+  color: #4b2e19; /* rich traditional brown */
+}

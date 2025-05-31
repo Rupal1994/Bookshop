@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Amita&display=swap');
+
+.logo-text {
+  font-family: 'Amita', cursive;
+  font-size: 40px;
+  font-weight: 700;
+  color: #a0522d;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: logoFadeSlide 1.2s ease-out forwards;
+  opacity: 0;
+  transform: translateX(-20px);
+}
+@keyframes logoFadeSlide {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.custom-navbar {
+  background-color: #fff8e1;
+  border-bottom: 2px solid #c19a6b;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 1rem;
+}
+
+.nav-tabs-custom .nav-tab {
+  position: relative;
+  font-family: 'Amita', serif;
+  font-size: 18px;
+  font-weight: 600;
+  margin-left: 20px;
+  color: #5c3b1e !important;
+  transition: color 0.3s ease;
+}
+
+.nav-tabs-custom .nav-tab::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 0%;
+  background: #c19a6b;
+  transition: width 0.3s ease;
+  margin-top: 4px;
+}
+
+.nav-tabs-custom .nav-tab:hover {
+  color: #a0522d !important;
+}
+.nav-tabs-custom .nav-tab:hover::after {
+  width: 100%;
+}
+
+/* ✅ Hover dropdown (final fix) */
+.nav-tabs-custom .dropdown:hover > .dropdown-menu {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  margin-top: 0;
+}
+
+/* Required dropdown default */
+.dropdown-menu {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  border: 1px solid #c19a6b;
+  border-radius: 8px;
+  font-family: 'Amita', serif;
+  background-color: #fffdf5;
+  transition: opacity 0.3s ease;
+}
+
+/* Dropdown Items */
+.dropdown-item {
+  color: #5c3b1e;
+  font-size: 16px;
+}
+.dropdown-item:hover {
+  background-color: #f5e6c8;
+  color: #a0522d;
+}

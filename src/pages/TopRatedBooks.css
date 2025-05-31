@@ -1,0 +1,62 @@
+.top-rated-books-section {
+  padding: 3rem 1rem;
+  background: #fff5ec;
+  font-family: 'Amita', serif;
+}
+
+.section-title {
+  text-align: center;
+  color: #8B2500;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.book-card {
+  background-color: #fff;
+  border: 2px solid #ffdab9;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 220px;
+  transition: transform 0.3s ease;
+}
+
+.book-card:hover {
+  transform: translateY(-8px);
+}
+
+.book-image {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-top-left-radius: 13px;
+  border-top-right-radius: 13px;
+}
+
+.book-info {
+  padding: 1rem;
+  text-align: center;
+}
+
+.book-title {
+  font-size: 1.1rem;
+  color: #e67e22;
+  margin: 0.5rem 0 0.3rem;
+}
+
+.book-author {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.book-rating {
+  font-weight: bold;
+  color: #DAA520;
+  margin-top: 0.4rem;
+}

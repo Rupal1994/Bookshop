@@ -1,0 +1,67 @@
+.user-review-section {
+  
+  padding: 2rem 1rem;
+  background: #fff5ec;
+  font-family: 'Amita', serif;
+}
+.user-review{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 20px;
+   background: #f5bb89;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+}
+.review-heading {
+  font-family: 'Amita', serif;
+  text-align: center;
+  color: #ba5b17;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+.review-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem;
+  background-color: #fff8e7;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 300px;
+}
+
+.review-card img {
+  height: 220px;
+  width: 150px;
+   object-fit: cover; 
+  border-radius: 12px;
+}
+
+.review-content {
+  max-width: 500px;
+  text-align: left;
+  font-family: 'Arial', sans-serif;
+}
+
+.review-content h3 {
+  font-size: 1.2rem;
+  color: #ba5b17;
+}
+
+.review-comment {
+  font-style: italic;
+  margin: 0.5rem 0;
+  color: #4b3b2a;
+}
+
+.review-rating {
+  font-weight: bold;
+  color: #d17c00;
+}
+
+.review-date {
+  font-size: 0.85rem;
+  color: #777;
+}
