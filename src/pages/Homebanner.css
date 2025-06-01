@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Amita&family=Playfair+Display&display=swap');
 
 .banner-section {
-  background: url('./images/library3.webp') center/cover no-repeat; /* Use your image or pattern */
+  background: url('/images/library3.webp') center/cover no-repeat;
   height: 90vh;
   display: flex;
   align-items: center;
