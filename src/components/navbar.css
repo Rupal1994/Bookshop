@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Amita&display=swap');
 
+/* === LOGO TEXT === */
 .logo-text {
   font-family: 'Amita', cursive;
   font-size: 40px;
@@ -17,16 +18,23 @@
   }
 }
 
+/* === CUSTOM NAVBAR === */
 .custom-navbar {
   background-color: #fff8e1;
   border-bottom: 2px solid #c19a6b;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   padding: 0.5rem 1rem;
+  z-index: 1030;
+  transition: all 0.3s ease;
+}
+
+/* === NAV LINKS & DROPDOWNS === */
+.nav-tabs-custom {
+  font-family: 'Amita', serif;
 }
 
 .nav-tabs-custom .nav-tab {
   position: relative;
-  font-family: 'Amita', serif;
   font-size: 18px;
   font-weight: 600;
   margin-left: 20px;
@@ -47,11 +55,11 @@
 .nav-tabs-custom .nav-tab:hover {
   color: #a0522d !important;
 }
+
 .nav-tabs-custom .nav-tab:hover::after {
   width: 100%;
 }
 
-/* ✅ Hover dropdown (final fix) */
 .nav-tabs-custom .dropdown:hover > .dropdown-menu {
   display: block;
   opacity: 1;
@@ -59,7 +67,7 @@
   margin-top: 0;
 }
 
-/* Required dropdown default */
+/* === DROPDOWN MENU === */
 .dropdown-menu {
   display: none;
   opacity: 0;
@@ -71,12 +79,47 @@
   transition: opacity 0.3s ease;
 }
 
-/* Dropdown Items */
 .dropdown-item {
   color: #5c3b1e;
   font-size: 16px;
+  transition: background-color 0.2s ease;
 }
+
 .dropdown-item:hover {
   background-color: #f5e6c8;
   color: #a0522d;
+}
+
+/* === TOGGLER === */
+.navbar-toggler {
+  border: none;
+  outline: none;
+  padding: 0.25rem 0.75rem;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba%2892, 59, 30, 0.7%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* === MOBILE RESPONSIVENESS === */
+@media (max-width: 991.98px) {
+  .nav-tabs-custom {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 1rem;
+    gap: 0.5rem;
+  }
+
+  .nav-tabs-custom .nav-tab {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .dropdown-menu {
+    width: 100%;
+  }
 }

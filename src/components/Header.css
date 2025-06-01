@@ -5,73 +5,89 @@
   transform: translateX(-50%);
   width: 90%;
   max-width: 1200px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 1rem 2rem;
-  background-color: transparent; 
+  background-color: transparent;
   border-radius: 12px;
   /* backdrop-filter: blur(6px); */
   /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
   z-index: 2;
 }
 
-.search-form {
-  flex: 1;
-  display: flex;
-  gap: 0.5rem;
+/* Search input styles */
+.form-control {
+  background-color: transparent !important;  
+  border: 1px solid #ba5b17;                 
+  color: #5c3b1e;                            
+  backdrop-filter: none;                    
+  box-shadow: none;                          
 }
 
-.search-form input {
-  flex: 1;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-   background-color: rgba(255, 255, 255, 0.2);
-  color: #000;
-  border: none;
-  backdrop-filter: blur(4px);
+.form-control::placeholder {
+  color: #a0522d;                            
+  opacity: 0.7;
 }
-
-.search-form button {
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  border: none;
-   background-color: rgba(255, 255, 255, 0.2);
-  color: #ba5b17;
-  border: none;
-}
-.search-form input:hover {
+.form-control:hover,
+.form-control:focus {
   background-color: rgba(255, 255, 255, 0.75);
+  color: #000;
+  box-shadow: none;
+  border: none;
 }
 
-.search-form button:hover {
+/* Search button styles */
+button.btn-primary {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ba5b17;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button.btn-primary:hover,
+button.btn-primary:focus {
   background-color: rgba(186, 91, 23, 1);
   color: #ccc;
 }
 
-.extras-buttons {
-  display: flex;
-  gap: 0.75rem;
-  align-items: center;
-  margin-left: 1rem;
-}
-
-.extras-buttons button {
+/* Login and Register buttons */
+button.btn-outline-primary,
+button.btn-outline-secondary {
   padding: 0.4rem 0.9rem;
   border-radius: 8px;
-  background-color: transparent;
   border: 1px solid #ba5b17;
+  background-color: transparent;
   color: #ba5b17;
-}
-.extras-buttons button:hover {
-  background-color: rgba(255, 255, 255, 0.8);
-  color: #a34a12;
-}
-.cart-icon {
-  position: relative;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+button.btn-outline-primary:hover,
+button.btn-outline-primary:focus,
+button.btn-outline-secondary:hover,
+button.btn-outline-secondary:focus {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #a34a12;
+  border-color: #a34a12;
+}
+
+/* Buttons & cart container spacing */
+.d-flex.justify-content-md-end.justify-content-start.align-items-center.gap-3 {
+  gap: 0.75rem !important; /* same spacing as original */
+}
+
+/* Cart icon */
+.cart-icon {
+  position: relative;
+  cursor: pointer;
+  color: #ba5b17;
+  transition: color 0.3s ease;
+}
+
+.cart-icon:hover {
+  color: #a34a12;
+}
+
+/* Cart count badge */
 .cart-count {
   position: absolute;
   top: -10px;
@@ -80,5 +96,7 @@
   color: rgb(84, 26, 26);
   padding: 2px 6px;
   font-size: 0.7rem;
+  font-weight: 700;
   border-radius: 50%;
+  user-select: none;
 }
