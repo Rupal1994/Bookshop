@@ -1,62 +1,115 @@
-.top-rated-books-section {
-  padding: 3rem 1rem;
-  background: #fff5ec;
-  font-family: 'Amita', serif;
-}
-
-.section-title {
-  text-align: center;
-  color: #8B2500;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
-
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-}
-
-.book-card {
-  background-color: #fff;
-  border: 2px solid #ffdab9;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 220px;
-  transition: transform 0.3s ease;
-}
-
-.book-card:hover {
-  transform: translateY(-8px);
-}
-
-.book-image {
+.marquee-wrapper {
+  overflow: hidden;
+  position: relative;
   width: 100%;
-  height: 280px;
-  object-fit: cover;
-  border-top-left-radius: 13px;
-  border-top-right-radius: 13px;
+  padding: 1rem 0;
 }
 
-.book-info {
-  padding: 1rem;
-  text-align: center;
+.marquee-content {
+  display: flex;
+  gap: 1rem;
+  animation: scrollMarquee 40s linear infinite;
+  width: fit-content;
+  -webkit-animation: scrollMarquee 40s linear infinite;
+}
+.marquee-wrapper:hover .marquee-content {
+  animation-play-state: paused;
+}
+
+@keyframes scrollMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.scroll-item {
+  flex: 0 0 auto;
+  width: 250px;
+}
+
+.modern-book-card {
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+  background-color: white;
+}
+
+.img-wrapper {
+  height: 250px;
+  overflow: hidden;
+}
+
+.img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .book-title {
-  font-size: 1.1rem;
-  color: #e67e22;
-  margin: 0.5rem 0 0.3rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
 }
 
-.book-author {
-  font-size: 0.95rem;
-  color: #666;
+.author-text {
+  font-size: 0.85rem;
+  color: #6b7280;
 }
 
-.book-rating {
-  font-weight: bold;
-  color: #DAA520;
-  margin-top: 0.4rem;
+.rating-badge {
+  font-size: 0.85rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 1rem;
 }
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .scroll-item {
+    width: 200px;
+  }
+
+  .img-wrapper {
+    height: 200px;
+  }
+
+  .marquee-content {
+    animation-duration: 20s;
+  }
+}
+.buy-now-btn {
+  margin-top: 0.5rem;
+  background-color: transparent;
+  color: #4f46e5;
+  border: 1px solid #4f46e5;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  padding: 0.3rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.buy-now-btn:hover {
+  background-color: #4f46e5;
+  color: white;
+}
+.top-rated-section{
+  padding: 2rem 1rem;
+  font-family: 'Amita', serif;
+}
+.section-title{
+  text-align: center;
+  color: #ba5b17;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+.rating-and-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+

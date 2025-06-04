@@ -1,48 +1,59 @@
 import React from 'react';
+import { Container, Card, Badge, Button } from 'react-bootstrap';
+import { Products } from '../../database';
 import './TopRatedBooks.css';
 
-const TopRatedBooks = () => {
-  const topRatedBooks = [
-    {
-      id: 1,
-      title: "रामायण कथा",
-      author: "गोस्वामी तुलसीदास",
-      rating: 4.8,
-      coverImage: "/images/ramayan-katha.webp"
-    },
-    {
-      id: 2,
-      title: "भगवद गीता सार",
-      author: "स्वामी चिन्मयानंद",
-      rating: 4.9,
-      coverImage: "/images/bhagvad-geeta.jpg"
-    },
-    {
-      id: 3,
-      title: "भारत का प्राचीन इतिहास",
-      author: "आर. एस. शर्मा",
-      rating: 4.5,
-      coverImage: "/images/bharat-itihas.webp"
-    }
-  ];
+export default function TopRatedBooks() {
+  const topBooks = Products.categories.flatMap(category =>
+    category.books.filter(book => book.rating >= 4.6)
+  );
 
   return (
-    <section className="top-rated-books-section">
-      <h2 className="section-title">🌟 Top Rated Books</h2>
-      <div className="card-container">
-        {topRatedBooks.map(book => (
-          <div key={book.id} className="book-card">
-            <img src={book.coverImage} alt={book.title} className="book-image" />
-            <div className="book-info">
-              <h3 className="book-title">{book.title}</h3>
-              <p className="book-author">{book.author}</p>
-              <p className="book-rating">⭐ {book.rating}</p>
-            </div>
+    <section className="top-rated-section">
+      <Container fluid>
+        <h2 className="section-title">🌟 Top Rated Books 🌟</h2>
+        <div className="marquee-wrapper">
+          <div className="marquee-content">
+            {topBooks.map(book => (
+              <div className="scroll-item" key={book.id}>
+                <Card className="modern-book-card">
+                  <div className="img-wrapper">
+                    <Card.Img src={book.coverImage} alt={book.title} />
+                  </div>
+                  <Card.Body className="text-center">
+                    <Card.Title className="book-title">{book.title}</Card.Title>
+                    <Card.Text className="author-text">{book.author}</Card.Text>
+                    <div className="rating-and-button">
+                      <Badge bg="warning" text="dark" className="rating-badge">
+                      ⭐ {book.rating}/5
+                    </Badge>
+                    <Button variant="outline-success" className="buy-now-btn">Buy Now</Button>
+                    </div>
+                    
+                  </Card.Body>
+                </Card>
+              </div>
+            ))}
+            {/* Duplicate for smooth loop */}
+            {/* {topBooks.map(book => (
+              <div className="scroll-item" key={`${book.id}-duplicate`}>
+                <Card className="modern-book-card">
+                  <div className="img-wrapper">
+                    <Card.Img src={book.coverImage} alt={book.title} />
+                  </div>
+                  <Card.Body className="text-center">
+                    <Card.Title className="book-title">{book.title}</Card.Title>
+                    <Card.Text className="author-text">{book.author}</Card.Text>
+                    <Badge bg="warning" text="dark" className="rating-badge">
+                      ⭐ {book.rating}/5
+                    </Badge>
+                  </Card.Body>
+                </Card>
+              </div>
+            ))} */}
           </div>
-        ))}
-      </div>
+        </div>
+      </Container>
     </section>
   );
-};
-
-export default TopRatedBooks;
+}
