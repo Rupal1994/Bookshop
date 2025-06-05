@@ -13,7 +13,7 @@ export default function AllBooks() {
             <h2 className='page-title mb-4'> All Books </h2>
             <Row>
                 {allbooks.map((book) => (
-                    <Col xs={12} sm={6} md={4} lg={3} key={book.id} className="mb-4">
+                    <Col xs={6} sm={6} md={4} lg={3} key={book.id} className="mb-4">
                         <Card className="custom-card h-100">
                             <div className="image-container">
                                 <Card.Img
