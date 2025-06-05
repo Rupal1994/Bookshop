@@ -10,26 +10,16 @@ import Header from '../components/Header'
 
 
 export default function Home() {
-   const handleSearch = (query) => {
-
-    console.log("Searching for:", query);
-
-  };
-
-  const cartItemCount = 3; 
+  
 
   return (
     <div>
-      <NavbarBook />
-      <div className="home-banner-wrapper">
-        <Header onSearch={handleSearch} cartCount={cartItemCount} />
-        <Homebanner />
-      </div>
-      {/* <Homebanner /> */}
+      {/* <NavbarBook /> */}
+      <Homebanner />
       <TopRatedBooks />
       <UserReview />
       <BrowseCategories />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }

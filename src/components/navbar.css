@@ -123,3 +123,72 @@
     width: 100%;
   }
 }
+/* Search input default hidden (0 width) */
+.search-input {
+  width: 0;
+  opacity: 0;
+  transition: width 0.3s ease, opacity 0.3s ease;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+/* When expanded: show input with width */
+.search-input.expanded {
+  width: 180px;
+  opacity: 1;
+  padding: 2px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+}
+
+/* Remove formcontrol default padding on hidden */
+.search-input:not(.expanded) {
+  pointer-events: none; /* avoid tab focus */
+}
+
+/* Search icon button styling */
+.search-icon-btn {
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.search-icon-btn:hover {
+  color: #ff9900; /* your theme color */
+  cursor: pointer;
+}
+
+/* Clear button styling */
+.clear-btn {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.clear-btn:hover {
+  color: #ff3300;
+}
+/* Icon hover effect */
+.custom-navbar button svg {
+  transition: color 0.3s ease;
+  color: #333; /* default icon color */
+  cursor: pointer;
+}
+
+.custom-navbar button:hover svg {
+  color: #ff9900; /* your theme highlight color */
+}
+
+/* Clear search icon hover */
+.custom-navbar button[aria-label="Clear search"]:hover svg {
+  color: #ff3300;
+}

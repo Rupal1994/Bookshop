@@ -7,7 +7,7 @@ export default function Layout() {
     return (
         <>
             <NavbarBook />
-            <main style={{ paddingTop: '70px', paddingBottom: '60px' }}>
+            <main>
                 <Outlet/>
             </main>
             <Footer />
