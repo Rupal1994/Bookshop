@@ -8,29 +8,34 @@ export default function NavbarBook() {
     <Navbar expand="lg" className="custom-navbar" fixed="top">
       <Container>
         <Row className="w-100 align-items-center">
-          {/* Logo */}
+          
           <Col xs={6} md={4} lg={3}>
             <Navbar.Brand as={Link} to="/">
               <span className="logo-text">पुस्तक</span>
             </Navbar.Brand>
           </Col>
 
-          {/* Toggle Button (on small screens) */}
+          
           <Col xs={6} className="text-end d-lg-none">
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
           </Col>
 
-          {/* Nav Links */}
+        
           <Col xs={12} lg={9}>
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="ms-lg-auto nav-tabs-custom justify-content-lg-end">
-                <NavDropdown title="Home" className="nav-tab" menuVariant="light">
+
+                {/* <NavDropdown title="Home" className="nav-tab" menuVariant="light">
                   <NavDropdown.Item as={Link} to="/">Main Home</NavDropdown.Item>
                   <NavDropdown.Item as={Link} to="/intro">Introduction</NavDropdown.Item>
-                </NavDropdown>
+                </NavDropdown> */}
+
+                <Nav.Link as={Link} to="/" className='nav-tab'>
+                  Home
+                </Nav.Link>
 
                 <NavDropdown title="Shop" className="nav-tab" menuVariant="light">
-                  <NavDropdown.Item as={Link} to="/shop/books">All Books</NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="/AllBooks">All Books</NavDropdown.Item>
                   <NavDropdown.Item as={Link} to="/shop/categories">Categories</NavDropdown.Item>
                   <NavDropdown.Item as={Link} to="/shop/discounts">Discount Offers</NavDropdown.Item>
                 </NavDropdown>
