@@ -2,8 +2,11 @@ import React from 'react'
 import { Container, Row, Col, Card, CardBody, CardImg , Button} from 'react-bootstrap'
 import { Products } from '../../database'
 import './AllBooks.css'
+import { useNavigate } from 'react-router-dom'
 
 export default function AllBooks() {
+
+    const navigate = useNavigate()
 
     const allbooks = Products.categories.flatMap((category) =>
         category.books.map((book) => ({ ...book, category: category.name })))
@@ -27,7 +30,9 @@ export default function AllBooks() {
                                 <Card.Title className="card-title">{book.title}</Card.Title>
                                 <Card.Text className="mb-1"><strong>Author:</strong> {book.author}</Card.Text>
                                 <Card.Text className="text-muted"><small>{book.category}</small></Card.Text>
-                                <Button variant="warning" className="buy-btn">Buy Now</Button>
+                                <Button variant="warning" className="buy-btn" 
+                                onClick={()=>navigate(`/product/${book.id}`)}>
+                                    Buy Now</Button>
                             </Card.Body>
                         </Card>
                     </Col>
