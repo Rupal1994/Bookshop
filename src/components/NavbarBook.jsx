@@ -62,7 +62,7 @@ export default function NavbarBook() {
 
             <NavDropdown title="Shop" className="nav-tab" menuVariant="light">
               <NavDropdown.Item as={Link} to="/AllBooks">All Books</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/shop/categories">Categories</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/CategoryPage">Categories</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/shop/discounts">Discount Offers</NavDropdown.Item>
             </NavDropdown>
 

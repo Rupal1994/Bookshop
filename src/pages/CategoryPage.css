@@ -1,0 +1,152 @@
+.cat-heading {
+  font-family: 'Amita', cursive;    
+  font-size: 1.8rem;
+  color: #c47f00;                     
+  text-align: center;                
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1.2px;
+  text-shadow: 1px 1px 3px rgba(196, 127, 0, 0.5); 
+  user-select: none;
+}
+
+
+
+/* Sidebar Styling */
+.sidebar {
+  background-color: #fdfdfd;
+  padding: 20px;
+  border-right: 2px solid #eee;
+  min-height: 100vh;
+  position: sticky;
+  top: 100px; /* adjust for your navbar height */
+}
+
+.sidebar h4 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  font-family: 'Amita', serif; /* use your preferred heading font */
+}
+
+/* List Group Items */
+.sidebar .list-group-item {
+  font-size: 1.05rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.sidebar .list-group-item:hover {
+  background-color: #ffc1071a;
+  color: #d35400;
+}
+
+.sidebar .list-group-item.active {
+  background-color: #ffc107;
+  border-color: #ffc107;
+  color: #000;
+}
+
+/* Right Side - Book Cards */
+.card {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.card-img-top {
+  height: 250px;
+  object-fit: contain;
+}
+
+.card-body {
+  text-align: center;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: relative;
+    min-height: auto;
+    border-right: none;
+    border-bottom: 2px solid #eee;
+    margin-bottom: 20px;
+  }
+}
+.book-card .image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
+}
+
+.book-card .image-container img {
+  display: block;
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+/* Zoom image slightly on hover */
+.book-card:hover .image-container img {
+  transform: scale(1.05);
+}
+
+/* Overlay */
+.book-card .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px 10px 0 0;
+}
+
+.book-card:hover .overlay {
+  opacity: 1;
+}
+
+.book-card .overlay span {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  pointer-events: none;
+}
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+
+.card-link:hover {
+  text-decoration: none;
+  color: inherit;
+}
