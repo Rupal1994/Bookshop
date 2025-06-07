@@ -131,7 +131,7 @@
     font-size: 1.1rem;
     padding: 12px 0;
     text-align: center;
-    white-space: normal; /* Allow line breaks on small screens */
+    white-space: normal; 
   }
 }
 .button-group {
@@ -179,4 +179,4 @@
   background-color: #ddd;
   color: black;
 }
-
+}

@@ -5,17 +5,19 @@ import { useParams } from 'react-router-dom'
 import './ProductDetail.css'
 import { useNavigate } from 'react-router-dom'
 import { FaArrowLeft } from 'react-icons/fa';
-
-
+import { useCart } from '../context/useCart'
 
 export default function ProductDetail() {
+    
+    const { addToCart } = useCart();
+
 
     const navigate = useNavigate()
 
     const { id } = useParams()
     const productId = parseInt(id)
 
-    console.log("URL param ID:", id, "Parsed:", productId);
+    // console.log("URL param ID:", id, "Parsed:", productId);
 
     const allBooks = Products.categories.flatMap(cat =>
         cat.books.map(book => ({ ...book, category: cat.name }))
@@ -26,7 +28,7 @@ export default function ProductDetail() {
     if (!selectedProduct) {
         return (
             <Container className="mt-5">
-                <h3>❌ Product Not Found</h3>
+                <h3> Product Not Found</h3>
                 <p>No book found with ID: {id}</p>
             </Container>
         );
@@ -56,8 +58,12 @@ export default function ProductDetail() {
                         </div>
 
                         <div className="button-group">
-                            <Button variant="warning" size="lg" className="btn-bn">
-                                Buy Now
+                            <Button variant="success" size="lg" className="btn-bn" 
+                                    onClick={()=>{
+                                        addToCart(selectedProduct)
+                                        navigate('/cart')
+                                    }}>
+                                Add to Cart
                             </Button>
 
                             <Button

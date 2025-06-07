@@ -2,8 +2,11 @@ import React from 'react';
 import { Container, Card, Badge, Button } from 'react-bootstrap';
 import { Products } from '../../database';
 import './TopRatedBooks.css';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 export default function TopRatedBooks() {
+
+  const navigate = useNavigate()
   const topBooks = Products.categories.flatMap(category =>
     category.books.filter(book => book.rating >= 4.6)
   );
@@ -27,7 +30,8 @@ export default function TopRatedBooks() {
                       <Badge bg="warning" text="dark" className="rating-badge">
                       ⭐ {book.rating}/5
                     </Badge>
-                    <Button variant="outline-success" className="buy-now-btn">Buy Now</Button>
+                    <Button variant="outline-success" className="buy-now-btn" 
+                    onClick={()=>navigate(`/product/${book.id}`)}>Buy Now</Button>
                     </div>
                     
                   </Card.Body>
