@@ -1,0 +1,107 @@
+/* ===== Base Page Styling ===== */
+.order-complete-page {
+  background-color: #fff8ef; /* soft cream background */
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  padding: 20px 10px;
+}
+
+/* ===== Success Icon ===== */
+.success-icon {
+  font-size: 4rem;
+  color: #e69500; /* saffron shade */
+  animation: pop 0.6s ease;
+}
+
+/* ===== Headings ===== */
+.order-complete-page h2 {
+  font-family: 'Amita', cursive;
+  color: #a45d00;
+  font-size: 2rem;
+}
+
+.order-complete-page .lead {
+  font-size: 1rem;
+  color: #5a3b0c;
+}
+
+/* ===== Order Summary Card ===== */
+.order-summary {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+  border: 2px solid #f2dfc2;
+  margin: auto;
+  max-width: 900px;
+}
+
+/* ===== Table Styling ===== */
+.order-summary table {
+  width: 100%;
+}
+
+.order-summary table th {
+  background-color: #fff1d6;
+  color: #5b3300;
+  text-align: center;
+}
+
+.order-summary table td {
+  color: #4b2800;
+  text-align: center;
+}
+
+/* ===== Total Section ===== */
+.order-summary h5 {
+  color: #783f04;
+  font-weight: 600;
+}
+
+/* ===== Buttons ===== */
+.order-complete-page .btn-outline-primary {
+  border-color: #d17a00;
+  color: #d17a00;
+  transition: all 0.3s ease;
+}
+
+.order-complete-page .btn-outline-primary:hover {
+  background-color: #d17a00;
+  color: #fff;
+}
+
+/* ===== Animation ===== */
+@keyframes pop {
+  0% { transform: scale(0); }
+  60% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* ===== Responsive Adjustments ===== */
+@media (max-width: 768px) {
+  .success-icon {
+    font-size: 3rem;
+  }
+
+  .order-complete-page h2 {
+    font-size: 1.5rem;
+  }
+
+  .lead {
+    font-size: 0.95rem;
+  }
+
+  .order-summary {
+    padding: 20px;
+  }
+
+  .order-summary table th,
+  .order-summary table td {
+    font-size: 0.9rem;
+    padding: 6px;
+  }
+
+  .order-complete-page .btn-outline-primary {
+    width: 100%;
+    margin-top: 15px;
+  }
+}

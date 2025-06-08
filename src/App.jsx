@@ -7,6 +7,7 @@ import Layout from './components/Layout'
 import ProductDetail from './pages/ProductDetail'
 import CartPage from './pages/CartPage'
 import CategoryPage from './pages/CategoryPage'
+import OrderComplete from './pages/OrderComplete'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
           <Route path='/product/:id' element={<ProductDetail/>}/>
           <Route path='/cart' element={<CartPage/>}/>
           <Route path='/CategoryPage' element={<CategoryPage/>}/>
+          <Route path='/OrderComplete' element={<OrderComplete/>}/>
         </Route>
       </Routes>
     </>

@@ -2,10 +2,26 @@ import React from 'react'
 import { Container,Row,Col,Button,Image } from 'react-bootstrap'
 import {useCart} from '../context/useCart'
 import './CartPage.css' 
+import {useNavigate} from 'react-router-dom'
 
 export default function CartPage() {
 
     const { cartItems, removeFromCart, updateQuantity, getTotalAmount } = useCart()
+    const navigate = useNavigate()
+
+    const handlePlaceOrder = () =>{
+      
+      const totalAmount = getTotalAmount()
+
+      navigate('/OrderComplete',{
+        state:{
+          orderedBooks : cartItems,
+          totalAmount
+        },
+      })
+      
+    }
+
 
     if(cartItems.length===0){
         return(
@@ -16,6 +32,7 @@ export default function CartPage() {
         )
     }
 
+    
   return (
     <div style={{paddingTop:'70px'}}>
     <Container className='pt-5'>
@@ -57,6 +74,12 @@ export default function CartPage() {
           </Col>
         </Row>
         ))}
+         <div className="text-end mt-4">
+          <h4>Total: ₹{getTotalAmount()}</h4>
+          <Button variant="success" className="mt-3" onClick={handlePlaceOrder}>
+            Place Order
+          </Button>
+        </div>
     </Container>
     </div>
   )
