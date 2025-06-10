@@ -6,6 +6,7 @@ import UserReview from '../pages/UserReview'
 import BrowseCategories from './BrowseCategories'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
+import FlashSale from './FlashSale'
 
 
 
@@ -18,6 +19,7 @@ export default function Home() {
       <Homebanner />
       <TopRatedBooks />
       <UserReview />
+      <FlashSale/>
       <BrowseCategories />
       {/* <Footer /> */}
     </div>

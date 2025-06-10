@@ -40,7 +40,7 @@ export default function CategoryPage() {
                                 <Col md={3} sm={6} xs={6} key={book.id} className="mb-4 mt-4">
                                     <Link to={`/product/${book.id}`} className="card-link">
                                         <Card className="h-100 book-card">
-                                            <div className="image-container">
+                                            <div className="image-container mt-4">
                                                 <Card.Img variant="top" src={book.coverImage.replace('./', '/')} />
                                                 <div className="overlay">
                                                     <span>View Details</span>

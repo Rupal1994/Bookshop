@@ -16,6 +16,7 @@ export const Products = {
           "rating": 4.8,
           "pages": 280,
           "publisher": "Geeta Press",
+          "isFlashSale": true,
           "coverImage": "./images/ramayan-katha.webp",
           "description": "प्राचीन भारतीय महाकाव्य रामायण की संक्षिप्त और सरल व्याख्या।",
           "reviews": [
@@ -92,6 +93,7 @@ export const Products = {
           "rating": 4.7,
           "pages": 320,
           "publisher": "Hindu Pustak Kendra",
+          "isFlashSale": true,
           "coverImage": "./images/shiv-puran.webp",
           "description": "शिव जी से संबंधित पौराणिक कथाएँ और उपदेश।",
           "reviews": [
@@ -221,6 +223,7 @@ export const Products = {
           "rating": 4.3,
           "pages": 200,
           "publisher": "Mind & Soul Publishers",
+          "isFlashSale": true,
           "coverImage": "./images/dhyan-sakti.jpg",
           "description": "ध्यान के लाभ और अभ्यास की विधियाँ।",
           "reviews": [
@@ -442,6 +445,7 @@ export const Products = {
           "rating": 4.4,
           "pages": 160,
           "publisher": "Children's Press",
+          "isFlashSale": true,
           "coverImage": "./images/panchtantra.jpg",
           "description": "पंचतंत्र की प्रसिद्ध नैतिक शिक्षाओं से भरी कहानियों का संग्रह।",
           "reviews": [
@@ -587,6 +591,7 @@ export const Products = {
           "rating": 4.4,
           "pages": 140,
           "publisher": "Young Readers",
+          "isFlashSale": true,
           "coverImage": "./images/tom-adventure.jpg",
           "description": "टॉम की रोमांचक और साहसी यात्राएँ।",
           "reviews": [

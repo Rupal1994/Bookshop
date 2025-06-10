@@ -1,0 +1,40 @@
+.flash-sale-section {
+  background: url('/images/flash-sale-back.avif');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+.flash-sale-title {
+  font-family: 'Amita', cursive;
+  color: #a45d00;
+}
+
+.countdown {
+  font-size: 1.2rem;
+  color: #e69500;
+  font-weight: bold;
+}
+
+.flash-sale-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 0.8rem;
+  border-radius: 8px;
+  padding: 5px 10px;
+}
+
+.flash-sale-card .price {
+  font-size: 1rem;
+  color: #5c2e00;
+}
+
+/* Responsive Card Height Fix */
+@media (max-width: 576px) {
+  .flash-sale-card {
+    height: auto;
+    
+  }
+}

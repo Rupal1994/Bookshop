@@ -28,7 +28,7 @@ export default function UserReview() {
   return (
     <section className="user-review-section">
       <Container>
-        <div className="user-review">
+    
           <h2 className="review-heading">What Our Users Say</h2>
           <Row className="justify-content-center">
             <Col md={12}>
@@ -66,7 +66,7 @@ export default function UserReview() {
               </Carousel>
             </Col>
           </Row>
-        </div>
+        
       </Container>
     </section>
   );

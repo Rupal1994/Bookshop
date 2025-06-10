@@ -1,18 +1,20 @@
 .user-review-section {
   
   padding: 2rem 1rem;
-  background: #fff5ec;
   font-family: 'Amita', serif;
+  background-color: #fff8ef;
+  background-image: radial-gradient(#e1c193 1px, transparent 1px);
+  background-size: 20px 20px;
 }
-.user-review{
+/* .user-review{
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
   border-radius: 20px;
-   background: #f5bb89;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+   /* background: #f4f2f1; */
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
 
-}
+ 
 .review-heading {
   font-family: 'Amita', serif;
   text-align: center;
