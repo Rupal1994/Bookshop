@@ -17,6 +17,7 @@ export default function NavbarBook() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const inputRef = useRef(null);
+  const [expanded,setExpanded] = useState(false)
 
   useEffect(() => {
     if (searchOpen) inputRef.current?.focus();
@@ -45,10 +46,13 @@ export default function NavbarBook() {
   const totalCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
-    <Navbar className="custom-navbar" fixed="top">
+    <Navbar className="custom-navbar" fixed="top"
+            expanded={expanded}
+            expand='lg'
+            onToggle={()=>setExpanded(prev=>!prev)}>
       <Container className="px-3">
     
-        <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
+        <Navbar.Brand as={Link} to="/" className="d-flex align-items-center" onClick={() => setExpanded(false)}>
           <span className="logo-text">पुस्तक</span>
         </Navbar.Brand>
 
@@ -58,14 +62,14 @@ export default function NavbarBook() {
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-between">
     
           <Nav className="nav-tabs-custom">
-            <Nav.Link as={Link} to="/" className="nav-tab">Home</Nav.Link>
+            <Nav.Link as={Link} to="/" className="nav-tab" onClick={() => setExpanded(false)}>Home</Nav.Link>
 
             <NavDropdown title="Shop" className="nav-tab" menuVariant="light">
-              <NavDropdown.Item as={Link} to="/AllBooks">All Books</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/CategoryPage">Categories</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/AllBooks" onClick={() => setExpanded(false)}>All Books</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/CategoryPage" onClick={() => setExpanded(false)}>Categories</NavDropdown.Item>
             </NavDropdown>
 
-            <Nav.Link as={Link} to="/AboutUs" className="nav-tab">About Us</Nav.Link>
+            <Nav.Link as={Link} to="/AboutUs" className="nav-tab" onClick={() => setExpanded(false)}>About Us</Nav.Link>
 
             {/* <NavDropdown title="Pages" className="nav-tab" menuVariant="light">
               <NavDropdown.Item as={Link} to="/AboutUs">About Us</NavDropdown.Item>
@@ -74,16 +78,18 @@ export default function NavbarBook() {
             </NavDropdown> */}
 
             <NavDropdown title="Blog" className="nav-tab" menuVariant="light">
-              <NavDropdown.Item as={Link} to="/blog">All Posts</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/blog/author">By Author</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/blog/category">By Category</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/blog" onClick={() => setExpanded(false)}>All Posts</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/blog/author" onClick={() => setExpanded(false)}>By Author</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/blog/category" onClick={() => setExpanded(false)}>By Category</NavDropdown.Item>
             </NavDropdown>
 
-            <NavDropdown title="Contact" className="nav-tab" menuVariant="light">
+            <Nav.Link as={Link} to="/ContactUs" className="nav-tab" onClick={() => setExpanded(false)}>Contact</Nav.Link>
+
+            {/* <NavDropdown title="Contact" className="nav-tab" menuVariant="light">
               <NavDropdown.Item as={Link} to="/ContactUs">Contact Form</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/map">Location Map</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/feedback">Feedback</NavDropdown.Item>
-            </NavDropdown>
+            </NavDropdown> */}
           </Nav>
 
       

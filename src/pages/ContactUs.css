@@ -29,3 +29,11 @@
   border-color: #ff9800;
   box-shadow: 0 0 0 0.25rem rgba(255, 152, 0, 0.25);
 }
+.map-container iframe {
+  border-radius: 16px;
+  border: 2px solid #ffcc80;
+}
+.star-rating {
+  display: flex;
+  align-items: center;
+}
