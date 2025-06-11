@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Card, Badge } from 'react-bootstrap';
-import { Products } from '../../database'; 
+import { Products } from '../../database';
 import './FlashSale.css';
+import { Link } from 'react-router-dom';
 
 export default function FlashSale() {
   const [flashBooks, setFlashBooks] = useState([]);
@@ -37,36 +38,49 @@ export default function FlashSale() {
   }, []);
 
   return (
-    <div className="flash-sale-section py-5">
+    
+    <section className="flash-sale-section py-5">
       <Container>
-        <h2 className="flash-sale-title text-center mb-4">🔥 Today Only! Limited Time Flash Sale</h2>
+       <h2 className="flash-sale-title text-center mb-4">🔥 Today Only! Limited Time Flash Sale</h2>
         <div className="countdown text-center mb-4">
           Ends in: {String(timeLeft.hours).padStart(2, '0')}:
           {String(timeLeft.minutes).padStart(2, '0')}:
           {String(timeLeft.seconds).padStart(2, '0')}
         </div>
-
         <Row>
-          {flashBooks.map(book => (
-            <Col key={book.id} xs={12} sm={6} md={4} lg={4} className="mb-4">
-              <Card className="h-100 shadow flash-sale-card">
-                <div className="position-relative mt-5">
-                  <Card.Img variant="top" src={book.coverImage.replace('./', '/')} className="rounded-top" />
-                  <Badge bg="danger" className="flash-sale-badge">🔥 Today Only!</Badge>
-                </div>
-                <Card.Body>
-                  <Card.Title className="fs-6">{book.title}</Card.Title>
-                  <Card.Text className="mb-1"><strong>Author:</strong> {book.author}</Card.Text>
-                  <Card.Text className="price">
-                    <span className="text-danger fw-bold">₹{book.discountPrice}</span>{' '}
-                    <span className="text-muted text-decoration-line-through">₹{book.price}</span>
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            </Col>
-          ))}
+          {/* 8-column left: Cards */}
+          <Col md={9}>
+            <Row>
+              {flashBooks.map(book => (
+                <Col key={book.id} xs={12} sm={6} md={4} lg={3} className="mb-4">
+                  <Link to={`product/${book.id}`}>
+                    <Card className="flash-sale-card">
+                      <div className="position-relative mt-5">
+                        <Card.Img variant="top" src={book.coverImage.replace('./', '/')} className="rounded-top" />
+                        <Badge bg="danger" className="flash-sale-badge">🔥 Today Only!</Badge>
+                      </div>
+                      <Card.Body>
+                        <Card.Title className="fs-6">{book.title}</Card.Title>
+                        <Card.Text className="mb-1"><strong>Author:</strong> {book.author}</Card.Text>
+                        <Card.Text className="price">
+                          <span className="text-danger fw-bold">₹{book.discountPrice}</span>{' '}
+                          <span className="text-muted text-decoration-line-through">₹{book.price}</span>
+                        </Card.Text>
+                      </Card.Body>
+                    </Card>
+                  </Link>
+                </Col>
+              ))}
+            </Row>
+          </Col>
+
+          {/* 4-column right: Empty or promo */}
+          <Col md={3} className="d-none d-md-block">
+
+            {/* <div className="h-100 w-100 flash-sale-promo-image"></div> */}
+          </Col>
         </Row>
       </Container>
-    </div>
+    </section>
   );
 }

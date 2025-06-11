@@ -1,0 +1,55 @@
+.about-hero {
+  background: url('/images/about-back.jpg') no-repeat center center;
+  background-size: cover;
+  min-height: 300px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 6rem;
+  padding-bottom: 4rem;
+  overflow: hidden;
+}
+
+/* Add blur overlay */
+.about-hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(4px);
+  background-color: rgba(0, 0, 0, 0.4); /* dark transparent layer */
+  z-index: 0;
+}
+
+.about-hero h1,
+.about-hero p {
+  position: relative;
+  z-index: 1;
+}
+
+.about-title {
+  font-family: 'Amita', cursive;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 1px 1px 4px #00000080;
+}
+
+.section-heading {
+  font-family: 'Amita', serif;
+  color: #a45d00;
+  margin-bottom: 1rem;
+}
+
+.feature-card {
+  background-color: #fff6ed;
+  border: none;
+  border-left: 6px solid #ff9800;
+  transition: transform 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  background-color: #ffe3c6;
+}

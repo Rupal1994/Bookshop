@@ -1,6 +1,6 @@
 .footer {
-  background-color: #f5bb89;; /* saffron orange */
-  color: #532d0b; /* cream */
+  background-color: #f5bb89;
+  color: #532d0b; 
   font-family: 'Amita', serif;
   padding-top: 3rem;
   padding-bottom: 1rem;
@@ -48,11 +48,12 @@
 }
 
 .footer-list li:hover {
-  color: #4b3b2a; /* dark brown highlight */
+  color: #4b3b2a; 
 }
 
 .footer-form {
   display: flex;
+  flex-direction: column;
   gap: 0.5rem;
   margin-top: 0.5rem;
 }
@@ -66,7 +67,7 @@
 }
 
 .footer-button {
-  background-color: #6e5439; /* dark brown */
+  background-color: #6e5439; 
   color: #fff5ec;
   border: none;
   border-radius: 4px;
@@ -98,7 +99,7 @@
 }
 
 .footer-bottom-bar {
-  border-top: 1px solid #fff2db;
+  border-top: 1px solid #8d7141;
   margin-top: 2rem;
   padding-top: 1rem;
   text-align: center;
@@ -106,10 +107,8 @@
   font-size: 0.9rem;
   color: #fff2db;
 }
-
-/* Responsive */
-
 @media (max-width: 900px) {
+
   .footer-container {
     justify-content: center;
   }
@@ -121,6 +120,12 @@
 }
 
 @media (max-width: 600px) {
+  .footer-container {
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+    gap: 1.5rem; 
+  }
   .footer-section {
     flex: 1 1 100%;
     max-width: 100%;

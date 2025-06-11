@@ -45,7 +45,7 @@ export default function NavbarBook() {
   const totalCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
-    <Navbar expand="lg" className="custom-navbar" fixed="top">
+    <Navbar className="custom-navbar" fixed="top">
       <Container className="px-3">
     
         <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
@@ -63,14 +63,15 @@ export default function NavbarBook() {
             <NavDropdown title="Shop" className="nav-tab" menuVariant="light">
               <NavDropdown.Item as={Link} to="/AllBooks">All Books</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/CategoryPage">Categories</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/shop/discounts">Discount Offers</NavDropdown.Item>
             </NavDropdown>
 
-            <NavDropdown title="Pages" className="nav-tab" menuVariant="light">
-              <NavDropdown.Item as={Link} to="/about">About Us</NavDropdown.Item>
+            <Nav.Link as={Link} to="/AboutUs" className="nav-tab">About Us</Nav.Link>
+
+            {/* <NavDropdown title="Pages" className="nav-tab" menuVariant="light">
+              <NavDropdown.Item as={Link} to="/AboutUs">About Us</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/faq">FAQ</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/team">Our Team</NavDropdown.Item>
-            </NavDropdown>
+            </NavDropdown> */}
 
             <NavDropdown title="Blog" className="nav-tab" menuVariant="light">
               <NavDropdown.Item as={Link} to="/blog">All Posts</NavDropdown.Item>
@@ -79,7 +80,7 @@ export default function NavbarBook() {
             </NavDropdown>
 
             <NavDropdown title="Contact" className="nav-tab" menuVariant="light">
-              <NavDropdown.Item as={Link} to="/contact">Contact Form</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/ContactUs">Contact Form</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/map">Location Map</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/feedback">Feedback</NavDropdown.Item>
             </NavDropdown>

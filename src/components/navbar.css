@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Amita&display=swap');
 
-/* === LOGO TEXT === */
 .logo-text {
   font-family: 'Amita', cursive;
   font-size: 40px;
@@ -18,7 +17,7 @@
   }
 }
 
-/* === CUSTOM NAVBAR === */
+
 .custom-navbar {
   background-color: #fff8e1;
   border-bottom: 2px solid #c19a6b;
@@ -28,7 +27,7 @@
   transition: all 0.3s ease;
 }
 
-/* === NAV LINKS & DROPDOWNS === */
+
 .nav-tabs-custom {
   font-family: 'Amita', serif;
 }

@@ -68,7 +68,7 @@ export default function ProductDetail() {
 
                             <Button
                                 variant="danger"
-                                size="md"
+                                size="lg"
                                 className="back-btn"
                                 onClick={() => navigate('/allbooks')}
                             >

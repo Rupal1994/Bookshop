@@ -1,0 +1,31 @@
+.contact-section {
+  background: #fff6ed; /* soft saffron background */
+}
+
+.section-heading {
+  font-family: 'Amita', serif;
+  color: #a45d00;
+  font-weight: bold;
+}
+
+.contact-card {
+  background-color: #ffffff;
+  border-left: 6px solid #ff9800;
+  border-radius: 16px;
+}
+
+.contact-card .form-label {
+  font-weight: 600;
+  color: #5c2e00;
+}
+
+.contact-card .form-control {
+  border-radius: 12px;
+  border: 1px solid #ffcc80;
+  box-shadow: none;
+}
+
+.contact-card .form-control:focus {
+  border-color: #ff9800;
+  box-shadow: 0 0 0 0.25rem rgba(255, 152, 0, 0.25);
+}

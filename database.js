@@ -492,6 +492,7 @@ export const Products = {
           "rating": 4.3,
           "pages": 150,
           "publisher": "Mythology Books",
+          "isFlashSale": true,
           "coverImage": "./images/harishchandra.jpg",
           "description": "सत्य और धर्म के लिए समर्पित राजा की कहानी।",
           "reviews": [
@@ -515,6 +516,7 @@ export const Products = {
           "rating": 4.1,
           "pages": 140,
           "publisher": "Folk Tales Press",
+          "isFlashSale": true,
           "coverImage": "./images/raja-bhoj.jpg",
           "description": "बुद्धिमान राजा भोज की रोचक और शिक्षाप्रद कहानियाँ।",
           "reviews": [
@@ -568,6 +570,7 @@ export const Products = {
           "rating": 4.5,
           "pages": 120,
           "publisher": "Kids World",
+          "isFlashSale": true,
           "coverImage": "./images/chanda-mama.jpg",
           "description": "बच्चों के लिए रंगीन चित्रों के साथ मजेदार कहानियाँ।",
           "reviews": [

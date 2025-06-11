@@ -41,7 +41,7 @@ export default function BrowseCategories() {
                 />
                 <Card.Body>
                   <Card.Title className="category-title">{category.name}</Card.Title>
-                  <Button className="view-more-button mt-2">View More</Button>
+                  <Button className="view-more-button mt-2" onClick={()=>navigate('/CategoryPage')}>View More</Button>
                 </Card.Body>
               </Card>
             </Col>
