@@ -10,16 +10,13 @@
   user-select: none;
 }
 
-
-
-/* Sidebar Styling */
 .sidebar {
   background-color: #fdfdfd;
   padding: 20px;
   border-right: 2px solid #eee;
   min-height: 100vh;
   position: sticky;
-  top: 100px; /* adjust for your navbar height */
+  top: 100px; 
 }
 
 .sidebar h4 {

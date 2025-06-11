@@ -35,11 +35,16 @@ export const useCart = () => {
     );
   };
 
+  const clearCart = () => {
+    setCartItems([]);
+  };
+
   return {
     cartItems,
     addToCart,
     removeFromCart,
     updateQuantity,
     getTotalAmount,
+    clearCart,
   };
 };

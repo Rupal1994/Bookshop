@@ -6,7 +6,7 @@ import {useNavigate} from 'react-router-dom'
 
 export default function CartPage() {
 
-    const { cartItems, removeFromCart, updateQuantity, getTotalAmount } = useCart()
+    const { cartItems, removeFromCart, updateQuantity, getTotalAmount,clearCart } = useCart()
     const navigate = useNavigate()
 
     const handlePlaceOrder = () =>{
@@ -19,6 +19,7 @@ export default function CartPage() {
           totalAmount
         },
       })
+      clearCart()
       
     }
 

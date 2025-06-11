@@ -61,7 +61,7 @@ export default function ProductDetail() {
                             <Button variant="success" size="lg" className="btn-bn" 
                                     onClick={()=>{
                                         addToCart(selectedProduct)
-                                        navigate('/cart')
+                                        navigate('/CartPage')
                                     }}>
                                 Add to Cart
                             </Button>
@@ -70,7 +70,7 @@ export default function ProductDetail() {
                                 variant="danger"
                                 size="lg"
                                 className="back-btn"
-                                onClick={() => navigate('/allbooks')}
+                                onClick={() => navigate('/AllBooks')}
                             >
                                 ← Back to All Books
                             </Button>

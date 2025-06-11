@@ -1,0 +1,19 @@
+.blog-title {
+  font-family: 'Amita', cursive;
+  color: #a45d00;
+}
+
+.blog-card-img {
+  height: 180px;
+  object-fit: cover;
+}
+
+/* .blog-card {
+  border-radius: 14px;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+} */
+
+.blog-card:hover {
+  transform: translateY(-5px);
+}

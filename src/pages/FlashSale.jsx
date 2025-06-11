@@ -48,12 +48,12 @@ export default function FlashSale() {
           {String(timeLeft.seconds).padStart(2, '0')}
         </div>
         <Row>
-          {/* 8-column left: Cards */}
+    
           <Col md={9}>
             <Row>
               {flashBooks.map(book => (
                 <Col key={book.id} xs={12} sm={6} md={4} lg={3} className="mb-4">
-                  <Link to={`product/${book.id}`}>
+                  <Link to={`product/${book.id}`} className="card-link">
                     <Card className="flash-sale-card">
                       <div className="position-relative mt-5">
                         <Card.Img variant="top" src={book.coverImage.replace('./', '/')} className="rounded-top" />
@@ -74,7 +74,7 @@ export default function FlashSale() {
             </Row>
           </Col>
 
-          {/* 4-column right: Empty or promo */}
+
           <Col md={3} className="d-none d-md-block">
 
             {/* <div className="h-100 w-100 flash-sale-promo-image"></div> */}

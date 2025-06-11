@@ -71,25 +71,10 @@ export default function NavbarBook() {
 
             <Nav.Link as={Link} to="/AboutUs" className="nav-tab" onClick={() => setExpanded(false)}>About Us</Nav.Link>
 
-            {/* <NavDropdown title="Pages" className="nav-tab" menuVariant="light">
-              <NavDropdown.Item as={Link} to="/AboutUs">About Us</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/faq">FAQ</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/team">Our Team</NavDropdown.Item>
-            </NavDropdown> */}
-
-            <NavDropdown title="Blog" className="nav-tab" menuVariant="light">
-              <NavDropdown.Item as={Link} to="/blog" onClick={() => setExpanded(false)}>All Posts</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/blog/author" onClick={() => setExpanded(false)}>By Author</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/blog/category" onClick={() => setExpanded(false)}>By Category</NavDropdown.Item>
-            </NavDropdown>
+             <Nav.Link as={Link} to="/Blog" className="nav-tab" onClick={() => setExpanded(false)}>Blogs</Nav.Link>
 
             <Nav.Link as={Link} to="/ContactUs" className="nav-tab" onClick={() => setExpanded(false)}>Contact</Nav.Link>
 
-            {/* <NavDropdown title="Contact" className="nav-tab" menuVariant="light">
-              <NavDropdown.Item as={Link} to="/ContactUs">Contact Form</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/map">Location Map</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/feedback">Feedback</NavDropdown.Item>
-            </NavDropdown> */}
           </Nav>
 
       

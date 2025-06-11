@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Amita&display=swap');
 
 
-
 .custom-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: none;
@@ -11,13 +10,13 @@
   text-align: center; 
 }
 
-/* 🔸 Hover Lift */
+
 .custom-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* 🔸 Image Zoom */
+
 .image-container {
   overflow: hidden;
   height: 250px;
@@ -35,7 +34,7 @@
   transform: scale(1.1);
 }
 
-/* 🔸 Title */
+
 .card-title {
   font-family: 'Amita', serif;
   color: #c2410c; /* Dark amber/red-orange */
@@ -49,7 +48,7 @@
   font-size: 0.95rem;
 }
 
-/* 🔸 Buy Button */
+
 .buy-btn {
   opacity: 0;
   transform: translateY(10px);

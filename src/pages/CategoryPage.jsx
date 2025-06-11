@@ -15,7 +15,7 @@ export default function CategoryPage() {
         <div style={{ paddingTop: '70px' }}>
             <Container fluid>
                 <Row>
-                    {/* Sidebar */}
+                    
                     <Col md={3} className="sidebar">
                         <h4 className="mb-3 mt-3">📂 Categories</h4>
                         <ListGroup>
@@ -32,8 +32,8 @@ export default function CategoryPage() {
                         </ListGroup>
                     </Col>
 
-                    {/* Books Area */}
-                    <Col md={9}>
+        
+                    <Col md={9} className='book-area'>
                         <h4 className="mb-4 mt-4 cat-heading">📚 {selectedCategory.name} Books</h4>
                         <Row>
                             {selectedCategory.books.map((book) => (

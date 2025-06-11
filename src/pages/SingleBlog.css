@@ -1,0 +1,10 @@
+.single-blog-title {
+  font-family: 'Amita', cursive;
+  color: #a45d00;
+}
+
+.blog-full-text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #4a2c0b;
+}

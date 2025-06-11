@@ -11,6 +11,8 @@ import OrderComplete from './pages/OrderComplete'
 import ScrollToTop from './components/ScrollToTop'
 import AboutUs from './pages/AboutUs'
 import ContactUs from './pages/ContactUs'
+import Blog from './pages/Blog'
+import SingleBlog from './pages/SingleBlog'
 
 function App() {
 
@@ -22,11 +24,13 @@ function App() {
           <Route index element={<Home />} />
           <Route path='/AllBooks' element={<AllBooks />} />
           <Route path='/product/:id' element={<ProductDetail/>}/>
-          <Route path='/cart' element={<CartPage/>}/>
+          <Route path='/CartPage' element={<CartPage/>}/>
           <Route path='/CategoryPage' element={<CategoryPage/>}/>
           <Route path='/OrderComplete' element={<OrderComplete/>}/>
           <Route path='/AboutUs' element={<AboutUs/>}/>
           <Route path='/ContactUs' element={<ContactUs/>}/>
+          <Route path='/Blog' element={<Blog/>}/>
+          <Route path='/blog/:id' element={<SingleBlog/>}/> 
         </Route>
       </Routes>
     </>
