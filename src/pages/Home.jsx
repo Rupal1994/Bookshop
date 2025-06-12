@@ -11,8 +11,6 @@ import FlashSale from './FlashSale'
 
 
 export default function Home() {
-  
-
   return (
     <div>
       {/* <NavbarBook /> */}

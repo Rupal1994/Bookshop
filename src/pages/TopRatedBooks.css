@@ -67,7 +67,7 @@
   border-radius: 1rem;
 }
 
-/* Mobile responsive */
+
 @media (max-width: 768px) {
   .scroll-item {
     width: 200px;
@@ -80,6 +80,11 @@
 
   .marquee-content {
     animation-duration: 20s;
+  }
+}
+@media (hover: hover) {
+  .marquee-wrapper:hover .marquee-content {
+    animation-play-state: paused;
   }
 }
 .buy-now-btn {
