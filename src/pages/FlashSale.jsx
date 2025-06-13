@@ -49,8 +49,7 @@ export default function FlashSale() {
         </div>
         <Row>
     
-          <Col md={9}>
-            <Row>
+          
               {flashBooks.map(book => (
                 <Col key={book.id} xs={12} sm={6} md={4} lg={3} className="mb-4">
                   <Link to={`product/${book.id}`} className="card-link">
@@ -74,14 +73,7 @@ export default function FlashSale() {
                 </Col>
               ))}
             </Row>
-          </Col>
-
-
-          <Col md={3} className="d-none d-md-block">
-
-            {/* <div className="h-100 w-100 flash-sale-promo-image"></div> */}
-          </Col>
-        </Row>
+          
       </Container>
     </section>
   );
