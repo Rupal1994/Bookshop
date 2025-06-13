@@ -1,23 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Container, Col, Row, Button, Image } from 'react-bootstrap'
 import { Products } from '../../database'
 import { useParams } from 'react-router-dom'
 import './ProductDetail.css'
 import { useNavigate } from 'react-router-dom'
 import { FaArrowLeft } from 'react-icons/fa';
-import { useCart } from '../context/useCart'
+import { useContext } from 'react'
+import { CartContext } from '../context/CartContext'
+
 
 export default function ProductDetail() {
+
     
-    const { addToCart } = useCart();
-
-
+    const { cartItems, dispatch } = useContext(CartContext);
     const navigate = useNavigate()
 
     const { id } = useParams()
     const productId = parseInt(id)
-
-    // console.log("URL param ID:", id, "Parsed:", productId);
 
     const allBooks = Products.categories.flatMap(cat =>
         cat.books.map(book => ({ ...book, category: cat.name }))
@@ -33,7 +32,6 @@ export default function ProductDetail() {
             </Container>
         );
     }
-
     return (
         <div style={{ paddingTop: '70px' }}>
             <Container className='product-detail-container'>
@@ -58,14 +56,13 @@ export default function ProductDetail() {
                         </div>
 
                         <div className="button-group">
-                            <Button variant="success" size="lg" className="btn-bn" 
+                            <Button size="lg" className="btn-bn" 
                                     onClick={()=>{
-                                        addToCart(selectedProduct)
+                                        dispatch({ type: 'ADD_TO_CART', payload: selectedProduct });
                                         navigate('/CartPage')
                                     }}>
                                 Add to Cart
                             </Button>
-
                             <Button
                                 variant="danger"
                                 size="lg"

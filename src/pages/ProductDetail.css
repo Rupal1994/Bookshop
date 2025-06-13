@@ -111,11 +111,11 @@
 }
 
 .btn-bn {
-   margin-top: 30px;
+  margin-top: 30px;
   padding: 10px 25px;
   font-weight: 600;
   font-size: 1rem;
-  background-color: #ffc107; /* Bootstrap warning yellow */
+  background-color: #ffc107 !important;
   color: #212529;
   border: none;
   border-radius: 6px;

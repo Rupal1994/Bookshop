@@ -4,7 +4,6 @@
   width: 100%;
   padding: 1rem 0;
 }
-
 .marquee-content {
   display: flex;
   gap: 1rem;
@@ -15,7 +14,6 @@
 .marquee-wrapper:hover .marquee-content {
   animation-play-state: paused;
 }
-
 @keyframes scrollMarquee {
   0% {
     transform: translateX(0);
@@ -82,16 +80,13 @@
     animation-duration: 20s;
   }
 }
-@media (hover: hover) {
-  .marquee-wrapper:hover .marquee-content {
-    animation-play-state: paused;
-  }
-}
+
 .buy-now-btn {
   margin-top: 0.5rem;
-  background-color: transparent;
-  color: #4f46e5;
-  border: 1px solid #4f46e5;
+  color: white !important;
+  background-color: rgb(206, 82, 38) !important;
+  border: 1px solid;
+  border-color: #a0522d !important;
   transition: all 0.3s ease;
   font-size: 0.9rem;
   padding: 0.3rem 1rem;
@@ -99,7 +94,7 @@
 }
 
 .buy-now-btn:hover {
-  background-color: #4f46e5;
+  background-color: #a0522d;
   color: white;
 }
 .top-rated-section{

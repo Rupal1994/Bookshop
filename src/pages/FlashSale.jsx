@@ -55,10 +55,12 @@ export default function FlashSale() {
                 <Col key={book.id} xs={12} sm={6} md={4} lg={3} className="mb-4">
                   <Link to={`product/${book.id}`} className="card-link">
                     <Card className="flash-sale-card">
-                      <div className="position-relative mt-5">
+                      {/* <Badge bg="danger" className="flash-sale-badge">🔥 Today Only!</Badge> */}
+                      
+                        
                         <Card.Img variant="top" src={book.coverImage.replace('./', '/')} className="rounded-top" />
-                        <Badge bg="danger" className="flash-sale-badge">🔥 Today Only!</Badge>
-                      </div>
+                        
+                    
                       <Card.Body>
                         <Card.Title className="fs-6">{book.title}</Card.Title>
                         <Card.Text className="mb-1"><strong>Author:</strong> {book.author}</Card.Text>

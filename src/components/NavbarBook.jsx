@@ -12,7 +12,9 @@ import {
 import { Link } from 'react-router-dom';
 import { FaSearch, FaShoppingCart, FaTimes } from 'react-icons/fa';
 import './navbar.css';
-import { useCart } from '../context/useCart';
+import { useContext } from 'react';
+import { CartContext } from '../context/CartContext'
+
 export default function NavbarBook() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
@@ -41,8 +43,7 @@ export default function NavbarBook() {
     console.log('Searching:', searchQuery);
   };
 
-  const { cartItems } = useCart();
-
+  const {cartItems} = useContext(CartContext)
   const totalCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
@@ -109,7 +110,7 @@ export default function NavbarBook() {
             </Button>
 
         
-            <Button variant="outline-secondary" size="sm" className="ms-3 position-relative" as={Link} to="/cart">
+            <Button variant="outline-secondary" size="sm" className="ms-3 position-relative" as={Link} to="/CartPage">
               <FaShoppingCart />
               <Badge bg="danger" pill className="position-absolute top-0 start-100 translate-middle" style={{ fontSize: '0.65rem' }}>
                 {totalCount > 0 && <span className="badge">{totalCount}</span>}
