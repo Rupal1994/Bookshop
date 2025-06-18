@@ -1,5 +1,6 @@
 .footer {
-  background-color: #f5bb89;
+  
+  background: linear-gradient(135deg, #a0522d, #fff4e6);
   color: #532d0b; 
   font-family: 'Amita', serif;
   padding-top: 3rem;

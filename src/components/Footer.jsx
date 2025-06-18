@@ -60,7 +60,7 @@ const Footer = () => {
       </div>
 
       <div className="footer-bottom-bar">
-        <p>© 2025 Indian Bookshop. All rights reserved.</p>
+        <p>© 2025 पुस्तक | All rights reserved.</p>
       </div>
     </footer>
   );

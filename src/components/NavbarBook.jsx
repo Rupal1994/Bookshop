@@ -1,37 +1,27 @@
-import React, { useState, useRef, useEffect } from 'react';
-import {
-  Navbar,
-  Nav,
-  Container,
-  NavDropdown,
-  Form,
-  FormControl,
-  Button,
-  Badge,
-} from 'react-bootstrap';
+import React, { useState, useRef, useEffect, useContext } from 'react';
+import { Navbar, Nav, Container, NavDropdown, Form, Button, FormControl, Badge } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { FaSearch, FaShoppingCart, FaTimes } from 'react-icons/fa';
+import { FaSearch, FaTimes, FaShoppingCart } from 'react-icons/fa';
 import './navbar.css';
-import { useContext } from 'react';
-import { CartContext } from '../context/CartContext'
-import {Products} from '../../database';
+import { CartContext } from '../context/CartContext';
+import { Products } from '../../database';
 
 export default function NavbarBook() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const inputRef = useRef(null);
-  const [expanded, setExpanded] = useState(false)
+  const [expanded, setExpanded] = useState(false);
+
+  const { cartItems } = useContext(CartContext);
+  const totalCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
   useEffect(() => {
     if (searchOpen) inputRef.current?.focus();
   }, [searchOpen]);
 
   const toggleSearch = () => {
-    if (searchOpen && !searchQuery) {
-      setSearchOpen(false);
-    } else {
-      setSearchOpen(true);
-    }
+    if (searchOpen && !searchQuery) setSearchOpen(false);
+    else setSearchOpen(true);
   };
 
   const clearSearch = () => {
@@ -44,98 +34,75 @@ export default function NavbarBook() {
     console.log('Searching:', searchQuery);
   };
 
-  const { cartItems } = useContext(CartContext)
-  const totalCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
-
   return (
-    <Navbar className="custom-navbar" fixed="top"
-      expanded={expanded}
-      expand='lg'
-      onToggle={() => setExpanded(prev => !prev)}>
-      <Container className="px-3">
+    <Navbar className="custom-navbar" expand="lg" fixed="top" expanded={expanded} onToggle={() => setExpanded(prev => !prev)} collapseOnSelect>
+      <Container className="d-flex align-items-center justify-content-between">
 
-        <Navbar.Brand as={Link} to="/" className="d-flex align-items-center" onClick={() => setExpanded(false)}>
-          <span className="logo-text">पुस्तक</span>
+        <Navbar.Brand as={Link} to="/" onClick={() => setExpanded(false)}>
+          <span className="brand-logo">पुस्तक</span>
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
+        <Navbar.Collapse id="basic-navbar-nav">
 
-        <Navbar.Collapse id="basic-navbar-nav" className="justify-content-between">
+          <div className='d-flex justify-content-center'>
 
-          <Nav className="nav-tabs-custom mx-auto">
-            <Nav.Link as={Link} to="/" className="nav-tab" onClick={() => setExpanded(false)}>Home</Nav.Link>
+            <Nav className="nav-links">
+              <Nav.Link as={Link} to="/" onClick={() => setExpanded(false)}>Home</Nav.Link>
 
-            {/* <NavDropdown title="Shop" className="nav-tab" menuVariant="light">
-              <NavDropdown.Item as={Link} to="/AllBooks" onClick={() => setExpanded(false)}>All Books</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/CategoryPage" onClick={() => setExpanded(false)}>Categories</NavDropdown.Item>
-            </NavDropdown> */}
+              <NavDropdown title="Shop" className="nav-tab" menuVariant="light">
+                <NavDropdown.Item as={Link} to="/AllBooks" onClick={() => setExpanded(false)}>All Books</NavDropdown.Item>
+                <NavDropdown.Divider />
+                {Products.categories.map(cat => (
+                  <NavDropdown.Item key={cat.id} as={Link} to={`/CategoryPage/${cat.name}`} onClick={() => setExpanded(false)}>
+                    {cat.name}
+                  </NavDropdown.Item>
+                ))}
+              </NavDropdown>
 
-            <NavDropdown title="Shop" className="nav-tab" menuVariant="light">
-              <NavDropdown.Item as={Link} to="/AllBooks" onClick={() => setExpanded(false)}>
-                All Books
-              </NavDropdown.Item>
+              <Nav.Link as={Link} to="/AboutUs" onClick={() => setExpanded(false)}>About</Nav.Link>
+              <Nav.Link as={Link} to="/Blog" onClick={() => setExpanded(false)}>Blog</Nav.Link>
+              <Nav.Link as={Link} to="/ContactUs" onClick={() => setExpanded(false)}>Contact</Nav.Link>
+            </Nav>
+          </div>
 
-              <NavDropdown.Divider />
-
-              {Products.categories.map((cat) => (
-                <NavDropdown.Item
-                  key={cat.id}
-                  as={Link}
-                  to={`/CategoryPage/${cat.name}`}
-                  onClick={() => setExpanded(false)}
-                >
-                  {cat.name}
-                </NavDropdown.Item>
-              ))}
-            </NavDropdown>
-
-
-            <Nav.Link as={Link} to="/AboutUs" className="nav-tab" onClick={() => setExpanded(false)}>About Us</Nav.Link>
-
-            <Nav.Link as={Link} to="/Blog" className="nav-tab" onClick={() => setExpanded(false)}>Blogs</Nav.Link>
-
-            <Nav.Link as={Link} to="/ContactUs" className="nav-tab" onClick={() => setExpanded(false)}>Contact</Nav.Link>
-
-          </Nav>
-
-
-          <div className="d-flex align-items-center ms-auto gap-3">
-
-            <Form onSubmit={handleSearchSubmit} className="d-flex align-items-center position-relative" style={{ minWidth: '40px' }}>
+          <div className="d-flex align-items-center ms-auto gap-3 navbar-actions">
+            <Form onSubmit={handleSearchSubmit} className="d-flex align-items-center position-relative search-form">
               <FormControl
                 ref={inputRef}
                 type="search"
-                placeholder="Search..."
+                placeholder="Search books..."
                 size="sm"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className={`search-input ${searchOpen ? 'expanded' : ''}`}
-                onBlur={() => {
-                  if (!searchQuery) setSearchOpen(false);
-                }}
+                onBlur={() => !searchQuery && setSearchOpen(false)}
               />
               {searchOpen && searchQuery && (
-                <Button variant="link" size="sm" className="clear-btn" onClick={clearSearch}>
+                <Button variant="link" size="md" className="clear-btn" onClick={clearSearch}
+                >
                   <FaTimes />
                 </Button>
               )}
-              <Button variant="link" size="md" className="search-icon-btn" onClick={toggleSearch}>
+              <Button variant="link" size="md" className="search-icon-btn" onClick={toggleSearch}
+                style={{ color: '#a0522d', border: 'none' }}>
                 <FaSearch />
               </Button>
             </Form>
 
+            <Button size="md" className="login-btn" style={{ backgroundColor: '#a0522d', color: 'white', border: 'none' }}>Login</Button>
 
-            <Button variant="warning" size="md" className="ms-3">
-              Login
-            </Button>
+            <Button size="md" as={Link} to="/CartPage"
+              style={{ backgroundColor: '#a0522d', border: 'none' }}
+              className="position-relative cart-btn">
 
-
-            <Button variant="outline-secondary" size="md" className="ms-3 position-relative" as={Link} to="/CartPage">
               <FaShoppingCart />
-              <Badge bg="danger" pill className="position-absolute top-0 start-100 translate-middle-y" style={{ fontSize: '1rem' }}>
-                {totalCount > 0 && <span className="badge">{totalCount}</span>}
-              </Badge>
+              {totalCount > 0 && (
+                <Badge bg="danger" pill className="position-absolute top-0 start-100 translate-middle-y cart-badge">
+                  {totalCount}
+                </Badge>
+              )}
             </Button>
           </div>
         </Navbar.Collapse>

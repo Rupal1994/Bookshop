@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { BrowserRouter,Router } from 'react-router-dom';
 import { CartContext } from './context/CartContext.jsx'
 import {CartProvider} from './context/CartProvider' 
+import 'bootstrap-icons/font/bootstrap-icons.css'
 
 createRoot(document.getElementById('root')).render(
   // <StrictMode>

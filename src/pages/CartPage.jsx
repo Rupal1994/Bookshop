@@ -1,9 +1,10 @@
 import React from 'react'
-import { Container, Row, Col, Button, Image } from 'react-bootstrap'
+import { Container, Row, Col, Button, Image} from 'react-bootstrap'
 import './CartPage.css'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate,Link } from 'react-router-dom'
 import { CartContext } from '../context/CartContext'
 import { useContext } from 'react'
+import './EmptyCart.css'
 
 export default function CartPage() {
 
@@ -51,9 +52,17 @@ const clearCart = () => {
 
   if (cartItems.length === 0) {
     return (
-      <Container className='pt-5'>
-        <h3>Your Cart is Empty</h3>
-        <p>Add Some Books To See Them Here!</p>
+      <Container className='pt-5' style={{marginTop: '70px'}}>
+        <img
+          src="/images/empty-cart.avif" 
+          alt="Empty Cart"
+          className="empty-cart-img mb-4"
+        />
+        <h2 className="mb-3">Oops! Your Cart is Empty</h2>
+        <p className="mb-4">Looks like you haven’t added anything yet.</p>
+        <Button as={Link} to="/AllBooks" variant="warning" className='mb-3'>
+          Browse Books
+        </Button>
       </Container>
     )
   }
@@ -102,7 +111,7 @@ const clearCart = () => {
         ))}
         <div className="text-end mt-4">
           <h4>Total: ₹{getTotalAmount()}</h4>
-          <Button variant="success" className="mt-3" onClick={handlePlaceOrder}>
+          <Button className="mt-3 mb-3" onClick={handlePlaceOrder} style={{backgroundColor : '#8e5b21', color: 'white'}}>
             Place Order
           </Button>
         </div>

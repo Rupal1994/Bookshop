@@ -12,14 +12,13 @@ export default function CategoryPage() {
 
     const { categoryName } = useParams()
     const { categories } = Products;
-    // const [selectedCategory, setSelectedCategory] = useState(categories[0]); 
     const selectedCategory = Products.categories.find(
         cat => cat.name === categoryName
     ) || null;
 
     return (
         <div style={{ paddingTop: '70px' }}>
-            <Container fluid>
+            <Container>
                 <Row>
                     <Col md={3} className="sidebar">
                         <h4 className="mb-3 mt-3">📂 Categories</h4>
@@ -45,7 +44,7 @@ export default function CategoryPage() {
                     <Col md={9} className='book-area'>
                         {selectedCategory ? (
                             <>
-                                <h4 className="mb-4 mt-4 cat-heading">📚 {selectedCategory.name} Books</h4>
+                                {/* <h4 className="mb-4 mt-4 cat-heading">📚 {selectedCategory.name} Books</h4> */}
                                 <Row>
                                     {selectedCategory.books.map((book) => (
                                         <Col md={3} sm={6} xs={6} key={book.id} className="mb-4 mt-4">

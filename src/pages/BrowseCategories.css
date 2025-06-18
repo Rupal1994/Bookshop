@@ -1,7 +1,7 @@
 
 .browse-categories {
   padding: 3rem 1rem;
-  background-color: #fff3e6; /* soft peach background */
+  background-color: transparent;
 }
 
 .browse-categories h2 {
@@ -23,7 +23,7 @@
 }
 
 .category-card {
-  background-color: #fff;
+  
   border-radius: 1rem;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -44,7 +44,7 @@
 
 .category-content {
   padding: 1rem;
-  background-color: #fff;
+  /* background-color: #fff; */
   text-align: center;
 }
 
@@ -95,23 +95,8 @@
   transform: translateX(0);
   opacity: 1;
 }
-.browse-categories {
-  background-color: #f9f9f9;
-}
-
 .category-title {
   font-family: 'Amita', cursive;
   font-size: 1.2rem;
   color: #333;
 }
-
-/* .view-more-button {
-  background-color: #e67e22;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 20px;
-}
-
-.view-more-button:hover {
-  background-color: #d35400;
-} */

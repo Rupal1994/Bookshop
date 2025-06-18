@@ -1,0 +1,11 @@
+.empty-cart-section {
+  min-height: 70vh; 
+  padding: 4rem 1rem;
+  background-color: #fff5e1;
+  font-family: 'Amita', sans-serif;
+}
+.empty-cart-img {
+  width: 180px;
+  height: auto;
+  opacity: 0.9;
+}
