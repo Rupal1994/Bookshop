@@ -30,6 +30,11 @@ const getTotalAmount = () => {
   }, 0);
 };
 
+const ProductTotal = () =>{
+    return cartItems.reduce((acc, item) => acc + item.discountPrice * item.quantity, 0);
+  
+}
+
 const clearCart = () => {
   dispatch({ type: 'CLEAR_CART' });
 };
@@ -105,7 +110,7 @@ const clearCart = () => {
                 variant="outline-danger"
                 onClick={() => removeFromCart(item.id)}
               >Remove</Button>
-              <h6 className="mt-3">Subtotal: ₹{getTotalAmount()}</h6>
+              <h6 className="mt-3">Subtotal: ₹{item.discountPrice * item.quantity}</h6>
             </Col>
           </Row>
         ))}

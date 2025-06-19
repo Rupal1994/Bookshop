@@ -8,6 +8,7 @@ export const Products = {
         {
           "id": 101,
           "title": "रामायण कथा",
+          "translit": "ramayan katha",
           "author": "गोस्वामी तुलसीदास",
           "language": "Hindi",
           "price": 220,
@@ -39,6 +40,7 @@ export const Products = {
         {
           "id": 102,
           "title": "महाभारत की कहानियाँ",
+          "translit": "mahabharat ki kahaniya",
           "author": "चरण सिंह",
           "language": "Hindi",
           "price": 210,
@@ -62,6 +64,7 @@ export const Products = {
         {
           "id": 103,
           "title": "हनुमान चालीसा",
+          "translit": "hanuman chalisha",
           "author": "गोस्वामी तुलसीदास",
           "language": "Hindi",
           "price": 150,
@@ -85,6 +88,7 @@ export const Products = {
         {
           "id": 104,
           "title": "शिव पुराण",
+          "translit": "shiv puran",
           "author": "वेद व्यास",
           "language": "Hindi",
           "price": 300,
@@ -109,6 +113,7 @@ export const Products = {
         {
           "id": 105,
           "title": "देवी भागवत कथा",
+          "translit": "devi bhagvat katha",
           "author": "मधुसूदन शर्मा",
           "language": "Hindi",
           "price": 230,
@@ -132,6 +137,7 @@ export const Products = {
         {
           "id": 106,
           "title": "वेदों का सार",
+          "translit": "vedo ka saar",
           "author": "डॉ. शंकराचार्य",
           "language": "Hindi",
           "price": 280,
@@ -162,6 +168,7 @@ export const Products = {
         {
           "id": 201,
           "title": "योग और ध्यान",
+          "translit": "yog aur dhyan",
           "author": "स्वामी विवेकानंद",
           "language": "Hindi",
           "price": 250,
@@ -185,6 +192,7 @@ export const Products = {
         {
           "id": 202,
           "title": "भगवद गीता सार",
+          "translit": "bhagvad geeta saar",
           "author": "स्वामी चिन्मयानंद",
           "language": "Hindi",
           "price": 200,
@@ -215,6 +223,7 @@ export const Products = {
         {
           "id": 203,
           "title": "ध्यान की शक्ति",
+          "translit": "dhyan ki shakti",
           "author": "सर श्री",
           "language": "Hindi",
           "price": 180,
@@ -239,6 +248,7 @@ export const Products = {
         {
           "id": 204,
           "title": "आत्मा का विज्ञान",
+          "translit": "aatma ka vigyan",
           "author": "प्रकाश गुप्ता",
           "language": "Hindi",
           "price": 220,
@@ -262,6 +272,7 @@ export const Products = {
         {
           "id": 205,
           "title": "जीवन का अर्थ",
+          "translit": "jeevan ka arth",
           "author": "डॉ. अरविंद शर्मा",
           "language": "Hindi",
           "price": 210,
@@ -285,6 +296,7 @@ export const Products = {
         {
           "id": 206,
           "title": "प्रेम और शांति",
+          "translit": "prem aur shanti",
           "author": "नीरज सक्सेना",
           "language": "Hindi",
           "price": 190,
@@ -315,6 +327,7 @@ export const Products = {
         {
           "id": 301,
           "title": "भारत का प्राचीन इतिहास",
+          "translit": "bharat ka prachin itihas",
           "author": "आर. एस. शर्मा",
           "language": "Hindi",
           "price": 300,
@@ -338,6 +351,7 @@ export const Products = {
         {
           "id": 302,
           "title": "स्वतंत्रता संग्राम की गाथा",
+          "translit": "svatantrata sangram ki gatha",
           "author": "बिपिन चंद्रा",
           "language": "Hindi",
           "price": 270,
@@ -361,6 +375,7 @@ export const Products = {
         {
           "id": 303,
           "title": "मुगल साम्राज्य का इतिहास",
+          "translit": "mughal samrajya ka itihas",
           "author": "अली अहमद",
           "language": "Hindi",
           "price": 280,
@@ -384,6 +399,7 @@ export const Products = {
         {
           "id": 304,
           "title": "भारत की संस्कृति",
+          "translit": "bharat ki sanskruti",
           "author": "सुनीता सिंह",
           "language": "Hindi",
           "price": 250,
@@ -407,6 +423,7 @@ export const Products = {
         {
           "id": 305,
           "title": "भारतीय स्वतंत्रता आन्दोलन",
+          "translit": "bhartiy svatantrata aandolan",
           "author": "रमेश चंद्र",
           "language": "Hindi",
           "price": 290,
@@ -437,6 +454,7 @@ export const Products = {
         {
           "id": 401,
           "title": "पंचतंत्र की कहानियाँ",
+          "translit": "panchtantra ki kahaniya",
           "author": "विश्नु शर्मा",
           "language": "Hindi",
           "price": 180,
@@ -461,6 +479,7 @@ export const Products = {
         {
           "id": 402,
           "title": "अकबर बीरबल की कहानियाँ",
+          "translit": "akbar birbal ki kahaniya",
           "author": "अज्ञात लेखक",
           "language": "Hindi",
           "price": 160,
@@ -484,6 +503,7 @@ export const Products = {
         {
           "id": 403,
           "title": "राजा हरिश्चंद्र की कहानी",
+          "translit": "raja harishchandra ki kahani",
           "author": "प्रदीप शर्मा",
           "language": "Hindi",
           "price": 170,
@@ -508,6 +528,7 @@ export const Products = {
         {
           "id": 404,
           "title": "राजा भोज की कथाएँ",
+          "translit": "raja bhoj ki katha ae",
           "author": "माधव शास्त्री",
           "language": "Hindi",
           "price": 165,
@@ -532,6 +553,7 @@ export const Products = {
         {
           "id": 405,
           "title": "चतुर लोमड़ी की कहानियाँ",
+          "translit": "chatur lomdi ki kahaniya",
           "author": "गोपाल वर्मा",
           "language": "Hindi",
           "price": 175,
@@ -562,6 +584,7 @@ export const Products = {
         {
           "id": 501,
           "title": "चंदा मामा की कहानी",
+          "translit": "chanda mama ki kahani",
           "author": "नीलम पटेल",
           "language": "Hindi",
           "price": 140,
@@ -586,6 +609,7 @@ export const Products = {
         {
           "id": 502,
           "title": "टॉम की एडवेंचर",
+          "translit": "tom ki adventure",
           "author": "राहुल देव",
           "language": "Hindi",
           "price": 160,

@@ -1,0 +1,29 @@
+.search-page {
+  font-family: 'Amita', serif;
+  color: #532d0b;
+}
+
+.search-header {
+  background-color: #f5bb89; /* saffron */
+  border-left: 6px solid #532d0b;
+}
+
+.search-header .highlight {
+  color: #532d0b;
+  font-weight: bold;
+}
+
+.book-card {
+  border: 1px solid #f5bb89;
+  transition: transform 0.2s ease;
+  background-color: #fffef9;
+}
+
+.book-card:hover {
+  transform: scale(1.03);
+}
+
+.no-results {
+  font-style: italic;
+  color: #777;
+}

@@ -13,6 +13,7 @@ import AboutUs from './pages/AboutUs'
 import ContactUs from './pages/ContactUs'
 import Blog from './pages/Blog'
 import SingleBlog from './pages/SingleBlog'
+import SearchBook from './pages/SearchBook'
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
           <Route path='/ContactUs' element={<ContactUs/>}/>
           <Route path='/Blog' element={<Blog/>}/>
           <Route path='/blog/:id' element={<SingleBlog/>}/> 
+          <Route path='/SearchBook' element={<SearchBook/>}/>
         </Route>
       </Routes>
     </>

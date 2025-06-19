@@ -6,13 +6,17 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { BrowserRouter,Router } from 'react-router-dom';
 import { CartContext } from './context/CartContext.jsx'
 import {CartProvider} from './context/CartProvider' 
+import { SearchContext } from './context/SearchContext'
+import {SearchProvider} from './context/SearchProvider'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 
 createRoot(document.getElementById('root')).render(
   // <StrictMode>
   <BrowserRouter>
   <CartProvider>
+  <SearchProvider>
     <App />
+  </SearchProvider>
   </CartProvider>
   </BrowserRouter>
   // </StrictMode>,

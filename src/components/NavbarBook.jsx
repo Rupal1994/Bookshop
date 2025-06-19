@@ -1,16 +1,19 @@
 import React, { useState, useRef, useEffect, useContext } from 'react';
 import { Navbar, Nav, Container, NavDropdown, Form, Button, FormControl, Badge } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaSearch, FaTimes, FaShoppingCart } from 'react-icons/fa';
 import './navbar.css';
 import { CartContext } from '../context/CartContext';
+import {SearchContext} from '../context/SearchContext'
 import { Products } from '../../database';
 
 export default function NavbarBook() {
+
+  const {searchQuery,setSearchQuery} = useContext(SearchContext)
   const [searchOpen, setSearchOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
   const inputRef = useRef(null);
   const [expanded, setExpanded] = useState(false);
+  const navigate = useNavigate()
 
   const { cartItems } = useContext(CartContext);
   const totalCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
@@ -31,7 +34,9 @@ export default function NavbarBook() {
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-    console.log('Searching:', searchQuery);
+    // console.log('Searching:', searchQuery);
+    if(searchQuery.trim !== '')
+      navigate('/Allbooks')
   };
 
   return (
