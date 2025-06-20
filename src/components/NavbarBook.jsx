@@ -4,12 +4,15 @@ import { Link, useNavigate } from 'react-router-dom';
 import { FaSearch, FaTimes, FaShoppingCart } from 'react-icons/fa';
 import './navbar.css';
 import { CartContext } from '../context/CartContext';
-import {SearchContext} from '../context/SearchContext'
+import { SearchContext } from '../context/SearchContext'
 import { Products } from '../../database';
+import { AuthContext } from '../context/AuthContext'
 
 export default function NavbarBook() {
 
-  const {searchQuery,setSearchQuery} = useContext(SearchContext)
+  const { currentUser, logout } = useContext(AuthContext)
+  const firstName = currentUser?.name?.split(' ')[0] || '';
+  const { searchQuery, setSearchQuery } = useContext(SearchContext)
   const [searchOpen, setSearchOpen] = useState(false);
   const inputRef = useRef(null);
   const [expanded, setExpanded] = useState(false);
@@ -35,7 +38,7 @@ export default function NavbarBook() {
   const handleSearchSubmit = (e) => {
     e.preventDefault();
     // console.log('Searching:', searchQuery);
-    if(searchQuery.trim !== '')
+    if (searchQuery.trim !== '')
       navigate('/Allbooks')
   };
 
@@ -96,7 +99,19 @@ export default function NavbarBook() {
               </Button>
             </Form>
 
-            <Button size="md" className="login-btn" style={{ backgroundColor: '#a0522d', color: 'white', border: 'none' }}>Login</Button>
+            {currentUser ? (
+              <>
+                <Nav.Link as={Link} to="/profile">Hello, {firstName}</Nav.Link>
+                <Button variant="outline-light" onClick={logout}>Logout</Button>
+              </>
+            ) : (
+              <Button size="md" className="login-btn"
+                style={{ backgroundColor: '#a0522d', color: 'white', border: 'none' }}
+                as={Link}
+                to="/Login">
+                Login
+              </Button>
+            )}
 
             <Button size="md" as={Link} to="/CartPage"
               style={{ backgroundColor: '#a0522d', border: 'none' }}

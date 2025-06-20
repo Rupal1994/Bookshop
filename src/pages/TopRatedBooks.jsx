@@ -42,9 +42,9 @@ export default function TopRatedBooks() {
                       <Card.Title className="book-title">{book.title}</Card.Title>
                       <Card.Text className="author-text">{book.author}</Card.Text>
                       <div className="rating-and-button">
-                        {/* <Badge bg="warning" text="dark" className="rating-badge">
+                        <Badge bg="warning" text="dark" className="rating-badge">
                           ⭐ {book.rating}/5
-                        </Badge> */}
+                        </Badge>
                         <Card.Text>₹{book.price}</Card.Text>
                       </div>
                     </div>

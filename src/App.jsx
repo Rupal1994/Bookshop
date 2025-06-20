@@ -14,25 +14,30 @@ import ContactUs from './pages/ContactUs'
 import Blog from './pages/Blog'
 import SingleBlog from './pages/SingleBlog'
 import SearchBook from './pages/SearchBook'
+import Login from './pages/Login';
+import SignUp from './pages/SignUp';
+
 
 function App() {
 
   return (
     <>
-      <ScrollToTop/>
+      <ScrollToTop />
       <Routes>
         <Route path='/' element={<Layout />}>
           <Route index element={<Home />} />
           <Route path='/AllBooks' element={<AllBooks />} />
-          <Route path='/product/:id' element={<ProductDetail/>}/>
-          <Route path='/CartPage' element={<CartPage/>}/>
-          <Route path='/CategoryPage/:categoryName' element={<CategoryPage/>}/>
-          <Route path='/OrderComplete' element={<OrderComplete/>}/>
-          <Route path='/AboutUs' element={<AboutUs/>}/>
-          <Route path='/ContactUs' element={<ContactUs/>}/>
-          <Route path='/Blog' element={<Blog/>}/>
-          <Route path='/blog/:id' element={<SingleBlog/>}/> 
-          <Route path='/SearchBook' element={<SearchBook/>}/>
+          <Route path='/product/:id' element={<ProductDetail />} />
+          <Route path='/CartPage' element={<CartPage />} />
+          <Route path='/CategoryPage/:categoryName' element={<CategoryPage />} />
+          <Route path='/OrderComplete' element={<OrderComplete />} />
+          <Route path='/AboutUs' element={<AboutUs />} />
+          <Route path='/ContactUs' element={<ContactUs />} />
+          <Route path='/Blog' element={<Blog />} />
+          <Route path='/blog/:id' element={<SingleBlog />} />
+          <Route path='/SearchBook' element={<SearchBook />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
         </Route>
       </Routes>
     </>

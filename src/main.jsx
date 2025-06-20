@@ -9,13 +9,16 @@ import {CartProvider} from './context/CartProvider'
 import { SearchContext } from './context/SearchContext'
 import {SearchProvider} from './context/SearchProvider'
 import 'bootstrap-icons/font/bootstrap-icons.css'
+import { AuthProvider } from './context/AuthProvider.jsx'
 
 createRoot(document.getElementById('root')).render(
   // <StrictMode>
   <BrowserRouter>
   <CartProvider>
   <SearchProvider>
+    <AuthProvider>
     <App />
+    </AuthProvider>
   </SearchProvider>
   </CartProvider>
   </BrowserRouter>

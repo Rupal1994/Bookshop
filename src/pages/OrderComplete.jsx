@@ -4,19 +4,14 @@ import { Container, Row, Col, Button, Card, Table } from 'react-bootstrap'
 import { FaCheckCircle } from 'react-icons/fa'
 import { useLocation, useNavigate } from 'react-router-dom'
 import './OrderComplete.css'
-
 export default function OrderComplete() {
-
     const { state } = useLocation()
     const navigate = useNavigate()
-
     if (!state) {
         navigate('/');
         return null;
     }
-
     const { orderedBooks, totalAmount } = state
-
     const orderId = Math.floor(100000 + Math.random() * 900000);
     const deliveryDate = new Date();
     deliveryDate.setDate(deliveryDate.getDate() + 5);
@@ -30,7 +25,7 @@ export default function OrderComplete() {
                 <p className="lead">Your order has been placed successfully. You will receive a confirmation email shortly.</p>
 
                 <Card className="order-summary mt-4 p-4 text-start">
-                    <h5 className="mb-3">🧾 Order Summary</h5>
+                    <h5 className="mb-3"> Order Summary</h5>
                     <p><strong>Order ID:</strong> #{orderId}</p>
                     <p><strong>Estimated Delivery:</strong> {deliveryDate.toDateString()}</p>
 
@@ -52,10 +47,8 @@ export default function OrderComplete() {
                             ))}
                         </tbody>
                     </Table>
-
                     <h5 className="mt-4 text-end">Total: ₹{totalAmount}</h5>
                 </Card>
-
                 <div className="mt-4">
                     <Button variant="outline-primary" onClick={() => navigate('/')}>Continue Shopping</Button>
                 </div>
