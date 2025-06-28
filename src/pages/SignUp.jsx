@@ -12,14 +12,13 @@ export default function SignUp() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const users = JSON.parse(localStorage.getItem('users')) || [];
 
+    const users = JSON.parse(localStorage.getItem('users')) || [];
     const emailExists = users.some((u) => u.email === user.email);
     if (emailExists) {
       alert('Email already registered!');
       return;
     }
-
     users.push(user);
     localStorage.setItem('users', JSON.stringify(users));
     alert('Sign up successful!');
