@@ -158,9 +158,9 @@
   display: flex;
   justify-content: center;      /* Center horizontally */
   gap: 1.5rem;                  /* Add space between tabs */
-  flex-wrap: wrap;             /* Wrap if screen is small */
+  /* flex-wrap: wrap;            */
   align-items: center;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
 }
 
 .nav-tab .nav-links {

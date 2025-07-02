@@ -50,13 +50,11 @@ export default function NavbarBook() {
           <span className="brand-logo">पुस्तक</span>
         </Navbar.Brand>
 
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle aria-controls="basic-navbar-nav"/>
 
         <Navbar.Collapse id="basic-navbar-nav">
 
-          <div className='d-flex justify-content-center'>
-
-            <Nav className="nav-links">
+            <Nav className="nav-links text-left">
               <Nav.Link as={Link} to="/" onClick={() => setExpanded(false)}>Home</Nav.Link>
 
               <NavDropdown title="Shop" className="nav-tab" menuVariant="light">
@@ -73,7 +71,7 @@ export default function NavbarBook() {
               <Nav.Link as={Link} to="/Blog" onClick={() => setExpanded(false)}>Blog</Nav.Link>
               <Nav.Link as={Link} to="/ContactUs" onClick={() => setExpanded(false)}>Contact</Nav.Link>
             </Nav>
-          </div>
+          
 
           <div className="d-flex align-items-center ms-auto gap-3 navbar-actions">
             <Form onSubmit={handleSearchSubmit} className="d-flex align-items-center position-relative search-form">
