@@ -43,7 +43,7 @@ export default function NavbarBook() {
   };
 
   return (
-    <Navbar className="custom-navbar" expand="lg" fixed="top" expanded={expanded} onToggle={() => setExpanded(prev => !prev)} collapseOnSelect>
+    <Navbar className="custom-navbar top-0" expand="lg" fixed="top" expanded={expanded} onToggle={() => setExpanded(prev => !prev)} collapseOnSelect>
       <Container className="d-flex align-items-center justify-content-between">
 
         <Navbar.Brand as={Link} to="/" onClick={() => setExpanded(false)}>
