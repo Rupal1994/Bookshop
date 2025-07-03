@@ -20,6 +20,7 @@ export default function NavbarBook() {
 
   const { cartItems } = useContext(CartContext);
   const totalCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+  const totalItem = cartItems.length;
 
   useEffect(() => {
     if (searchOpen) inputRef.current?.focus();
@@ -86,9 +87,8 @@ export default function NavbarBook() {
                 onBlur={() => !searchQuery && setSearchOpen(false)}
               />
               {searchOpen && searchQuery && (
-                <Button variant="link" size="md" className="clear-btn" onClick={clearSearch}
+                <Button variant="link" className="clear-btn" onClick={clearSearch}
                 >
-                  <FaTimes />
                 </Button>
               )}
               <Button variant="link" size="md" className="search-icon-btn" onClick={toggleSearch}
@@ -117,11 +117,11 @@ export default function NavbarBook() {
 
               <FaShoppingCart />
               {totalCount > 0 && (
-                <Badge bg="danger" pill className="position-absolute top-0 start-100 translate-middle-y cart-badge">
-                  {totalCount}
+                <Badge bg="danger" pill className="position-absolute top-0 start-50 translate-middle-y cart-badge">
+                  {totalItem}
                 </Badge>
               )}
-            </Button>
+            </Button> 
           </div>
         </Navbar.Collapse>
       </Container>

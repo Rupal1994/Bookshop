@@ -55,7 +55,7 @@ export default function AllBooks() {
 
             <h2 className='page-title mb-4'> All Books </h2>
             <Row>
-                <Col md={3}>
+                <Col md={2}>
                     <div className="p-3 rounded shadow-sm" style={{ backgroundColor: '#fff3e6' }}>
                         <h5 className="mb-3">Filter Books</h5>
 
@@ -118,7 +118,7 @@ export default function AllBooks() {
                     </div>
 
                 </Col>
-                <Col md={9}>
+                <Col md={10}>
 
                     {searchQuery.trim() !== '' && (
                         <div className="mb-3 p-2" style={{ backgroundColor: '#f5bb89', borderLeft: '6px solid #532d0b' }}>
@@ -133,7 +133,7 @@ export default function AllBooks() {
                             </div>
                         ):(
                         booksToDisplay.map((book) => (
-                            <Col xs={6} sm={6} md={4} lg={3} key={book.id} className="mb-4">
+                            <Col xs={6} sm={6} md={4} lg={4} key={book.id} className="mb-4">
                                 <Card className="custom-card h-100">
                                     <div onClick={() => navigate(`/product/${book.id}`)} style={{ cursor: 'pointer' }}>
                                         <div className="image-container">
@@ -164,7 +164,7 @@ export default function AllBooks() {
                                         show={showToast}
                                         delay={2000}
                                         autohide
-                                        bg='warning'>
+                                        bg='danger'>
                                         <Toast.Header>
                                             <strong className='me-auto'>Cart</strong>
                                         </Toast.Header>

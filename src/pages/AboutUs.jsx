@@ -19,14 +19,14 @@ export default function AboutUs() {
             <img src="/images/about-hero.jpg" alt="Our Story" className="img-fluid rounded shadow" />
           </Col>
           <Col md={6}>
-            <h2 className="section-heading">Our Story</h2>
-            <p className="text-muted">
+            <h2 className="section-heading text-center">Our Story</h2>
+            <p className="text-muted justify-conten-center">
               Pustak is more than just a bookstore — it's a tribute to the timeless tradition of storytelling.
               Whether you're seeking the wisdom of the Ramayana, the valor of Indian kings, or bedtime tales for your children, we bring carefully curated books in Gujarati, Hindi, and English.
             </p>
             <p className="text-muted">
               We aim to make our rich literary culture accessible to all generations — in homes, schools, and beyond.
-            </p>
+            </p> 
           </Col>
         </Row>
       </Container>

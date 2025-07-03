@@ -34,7 +34,7 @@ export default function ProductDetail() {
     }
     return (
         <div style={{ paddingTop: '70px' }}>
-            <Container className='product-detail-container'>
+            <Container className='product-detail-container mt-5 mb-5'>
                 <Row>
                     <Col md={5} className="image-col">
                         <Image

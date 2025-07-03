@@ -57,7 +57,7 @@ export default function CategoryPage() {
                                 {/* <h4 className="mb-4 mt-4 cat-heading">📚 {selectedCategory.name} Books</h4> */}
                                 <Row>
                                     {selectedCategory.books.map((book) => (
-                                        <Col md={3} sm={6} xs={6} key={book.id} className="mb-4 mt-4">
+                                        <Col md={4} sm={6} xs={6} key={book.id} className="mb-4 mt-4">
                                 
                                                 <Card className="h-100 book-card">
                                                     <div onClick={() => navigate(`/product/${book.id}`)} style={{ cursor: 'pointer' }}>
